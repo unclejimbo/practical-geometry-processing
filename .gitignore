@@ -1,0 +1,10 @@
+# External dependencies
+external/*
+!external/CMakeLists.txt
+
+# Build files
+build
+
+# Others
+.vs
+.vscode
