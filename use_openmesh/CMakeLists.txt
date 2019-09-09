@@ -20,6 +20,10 @@ target_compile_options(use_openmesh PRIVATE
         $<$<CONFIG:Debug>:/Od /W3 /Zi>>
 )
 
+target_compile_definitions(use_openmesh PRIVATE
+	_USE_MATH_DEFINES
+)
+
 set_target_properties(use_openmesh PROPERTIES
     ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
     LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
