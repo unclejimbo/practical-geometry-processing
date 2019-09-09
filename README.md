@@ -3,6 +3,7 @@
 This repo contains a list of tutorials on practical geometry processing.
 
 1. [How to use OpenMesh in your code](https://github.com/unclejimbo/practical-geometry-processing/tree/master/use_openmesh).
+2. [How to use CGAL in your code](https://github.com/unclejimbo/practical-geometry-processing/tree/master/use_cgal).
 
 ## Build instructions
 

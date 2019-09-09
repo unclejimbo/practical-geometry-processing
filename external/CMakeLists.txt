@@ -12,11 +12,26 @@ if (${USE_PREBUILT_LIBS})
                 CACHE PATH "OpenMesh include directory" FORCE)
             set(OPENMESH_LIBRARY_DIR ${CMAKE_CURRENT_SOURCE_DIR}/OpenMesh-8.0-msvc2017-x64/lib
                 CACHE PATH "OpenMesh library directory" FORCE)
+
+            set(_BoostFile ${CMAKE_CURRENT_SOURCE_DIR}/boost-1.70.0-msvc2017-x64.zip)
+            set(_BoostUrl http://139.162.111.133:8000/f/648fc05941d0409498e8/?dl=1)
+            set(_BoostHash cd8915715e98b34afdf5192ef7899d2bc254aee2cdb915a0aa097a57918067f2)
+            set(BOOST_INCLUDEDIR ${CMAKE_CURRENT_SOURCE_DIR}/boost-1.70.0-msvc2017-x64
+                CACHE PATH "Boost include directory" FORCE)
+
+
+            set(_CGALFile ${CMAKE_CURRENT_SOURCE_DIR}/CGAL-4.14-msvc2017-x64.zip)
+            set(_CGALUrl http://139.162.111.133:8000/f/239f92285f63449a98fb/?dl=1)
+            set(_CGALHash b27b4975858d9587b520e204a033906b03b9851497ef706b91a6ad47ed658645)
+            set(CGAL_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/CGAL-4.14-msvc2017-x64/include
+                CACHE PATH "CGAL include directory" FORCE)
+            set(CGAL_LIBRARY_DIR ${CMAKE_CURRENT_SOURCE_DIR}/CGAL-4.14-msvc2017-x64/lib
+                CACHE PATH "CGAL debug lib" FORCE)
         endif()
 
-        set(_files ${_OpenMeshFile})
-        set(_urls ${_OpenMeshUrl})
-        set(_hashes ${_OpenMeshHash})
+        set(_files ${_OpenMeshFile} ${_BoostFile} ${_CGALFile})
+        set(_urls ${_OpenMeshUrl} ${_BoostUrl} ${_CGALUrl})
+        set(_hashes ${_OpenMeshHash} ${_BoostHash} ${_CGALHash})
         message("Use prebuilt libraries.")
     else()
         set(_FOUND_PREBUILT_LIBS FALSE CACHE BOOL INTERNAL)
