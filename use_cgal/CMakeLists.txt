@@ -8,7 +8,6 @@ set(CGAL_DO_NOT_WARN_ABOUT_CMAKE_BUILD_TYPE TRUE CACHE BOOL
     "Disable CGAL's build type warning"
 )
 
-
 add_executable(use_cgal main.cpp)
 
 # the exported target of prebuilt CGAL doesn't work well
