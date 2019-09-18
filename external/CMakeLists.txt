@@ -27,11 +27,23 @@ if (${USE_PREBUILT_LIBS})
                 CACHE PATH "CGAL include directory" FORCE)
             set(CGAL_LIBRARY_DIR ${CMAKE_CURRENT_SOURCE_DIR}/CGAL-4.14-msvc2017-x64/lib
                 CACHE PATH "CGAL debug lib" FORCE)
+
+            set(_EigenFile ${CMAKE_CURRENT_SOURCE_DIR}/Eigen-3.3.5-msvc2017-x64.zip)
+            set(_EigenUrl http://139.162.111.133:8000/f/c0144b3e7d3141e0bfa3/?dl=1)
+            set(_EigenHash 7ba520fc4fba537e3fb6628f2f44b8dc49baf9fca017e172be398e9cc98d74b9)
+            set(Eigen3_DIR ${CMAKE_CURRENT_SOURCE_DIR}/Eigen-3.3.5-msvc2017-x64/share/eigen3/cmake
+                CACHE PATH "Eigen3 directory" FORCE)
+
+            set(_libiglFile ${CMAKE_CURRENT_SOURCE_DIR}/libigl-2.1.0-msvc2017-x64.zip)
+            set(_libiglUrl http://139.162.111.133:8000/f/db8f732b3bea4cf19983/?dl=1)
+            set(_libiglHash 1aa9dbb15496b213cfd878d882a8bdc76ab89a963e3fdaec76a3cfccd3b4f7a0)
+            set(_libigl_DIR ${CMAKE_CURRENT_SOURCE_DIR}/libigl-2.1.0-msvc2017-x64/share/libigl/cmake
+                CACHE PATH "libigl directory" FORCE)
         endif()
 
-        set(_files ${_OpenMeshFile} ${_BoostFile} ${_CGALFile})
-        set(_urls ${_OpenMeshUrl} ${_BoostUrl} ${_CGALUrl})
-        set(_hashes ${_OpenMeshHash} ${_BoostHash} ${_CGALHash})
+        set(_files ${_OpenMeshFile} ${_BoostFile} ${_CGALFile} ${_EigenFile} ${_libiglFile})
+        set(_urls ${_OpenMeshUrl} ${_BoostUrl} ${_CGALUrl} ${_EigenUrl} ${_libiglUrl})
+        set(_hashes ${_OpenMeshHash} ${_BoostHash} ${_CGALHash} ${_EigenHash} ${_libiglHash})
         message("Use prebuilt libraries.")
     else()
         set(_FOUND_PREBUILT_LIBS FALSE CACHE INTERNAL "Prebuilt libraries are found")
